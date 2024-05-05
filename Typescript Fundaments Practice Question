@@ -1,0 +1,584 @@
+1-Write a script to log "Hello, World!" to the console.
+Conole.log("Hello World");
+2-Create a variable temperature and assign it a value. Then log "It's cold!" if the temperature is below 20 degrees Celsius.
+let temperature: number = 10;
+if (temperature < 20) {
+    console.log("It's cold!");
+}
+3-// Declare and assign initial number of apples
+let apples: number = 10;
+
+// Number of apples given away
+let applesGivenAway: number = 3;
+
+// Calculate the number of apples left
+let applesLeft: number = apples - applesGivenAway;
+
+// Log the result
+console.log("You have", applesLeft, "apples left.");
+4-Declare two variables, firstName and lastName, then create a third variable fullName that combines them. Log the result.
+// Declare and assign values to firstName and lastName variables
+let firstName: string = "John";
+let lastName: string = "Doe";
+
+// Combine firstName and lastName to create fullName
+let fullName: string = firstName + " " + lastName;
+console.log("Full Name:", fullName);
+
+5-Write a TypeScript code that uses a comparison operator to check if the number 5 is greater than 3. Log "Yes" if true, otherwise log "No
+// Check if 5 is greater than 3 using a comparison operator
+if (5 > 3) {
+    console.log("Yes");
+} else {
+    console.log("No");
+}
+6-Create a function calculateArea that takes the radius of a circle as an input and returns the area of the circle.
+// Define a function called calculateArea that takes the radius of a circle as input and returns the area of the circle
+function calculateArea(radius: number): number {
+    // Calculate the area of the circle using the formula: π * r^2
+    const area: number = Math.PI * radius * radius;
+    return area;
+}
+
+
+7-Write a loop that logs numbers from 1 to 50. For multiples of 3, log "Fizz" instead of the number, and for multiples of 5, log "Buzz".
+// Loop through numbers from 1 to 50
+for (let i = 1; i <= 50; i++) {
+    // Check if the number is a multiple of both 3 and 5 first, as we want "FizzBuzz" to be logged in this case
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    }
+    // Check if the number is a multiple of 3
+    else if (i % 3 === 0) {
+        console.log("Fizz");
+    }
+    // Check if the number is a multiple of 5
+    else if (i % 5 === 0) {
+        console.log("Buzz");
+    }
+    // If the number is neither a multiple of 3 nor 5, simply log the number
+    else {
+        console.log(i);
+    }
+}
+
+8-Define an array temperatures with at least five different temperatures (numbers). Write a script to find and log the highest temperature.
+// Define an array of temperatures
+const temperatures: number[] = [18, 22, 25, 20, 28]; // Example temperatures, you can add more if needed
+
+// Initialize a variable to store the highest temperature, assuming the first temperature in the array is the highest for now
+let highestTemperature: number = temperatures[0];
+
+// Loop through the array of temperatures starting from the second element
+for (let i = 1; i < temperatures.length; i++) {
+    // Check if the current temperature is higher than the highest temperature found so far
+    if (temperatures[i] > highestTemperature) {
+        // If yes, update the highest temperature
+        highestTemperature = temperatures[i];
+    }
+}
+
+console.log("The highest temperature is:", highestTemperature);
+9-Create a script that prompts the user to enter their age and then logs whether they are a minor (under 18) or an adult.
+// Allow the user to enter their age
+const ageInput: string | null = prompt("Please enter your age:");
+
+// Convert the user input to a number
+const age: number = parseInt(ageInput || "0", 10);
+
+// Check if the age is less than 18 to determine if the user is a minor or an adult
+if (age < 18) {
+    console.log("You are a minor.");
+} else {
+    console.log("You are an adult.");
+}
+
+10-Write a function that takes an array of numbers and returns the count of positive numbers in the array.
+// Define a function called countPositiveNumbers that takes an array of numbers as input and returns the count of positive numbers
+function countPositiveNumbers(numbers: number[]): number {
+    // Initialize a variable to store the count of positive numbers
+    let count: number = 0;
+
+    // Loop through the array of numbers
+    for (let i = 0; i < numbers.length; i++) {
+        // Check if the current number is positive
+        if (numbers[i] > 0) {
+            // If yes, increment the count of positive numbers
+            count++;
+        }
+    }
+
+    // Return the count of positive numbers
+    return count;
+}
+console.log("The count of positive numbers in the array is:", positiveCount);
+
+11-Write a function that takes an array of words and returns a new array containing only the words that start with the letter 'a'.
+// Define a function called filterWordsStartingWithA that takes an array of words as input and returns a new array containing only the words that start with the letter 'a'
+function filterWordsStartingWithA(words: string[]): string[] {
+    // Use the filter method to create a new array containing only the words that start with the letter 'a'
+    const wordsStartingWithA: string[] = words.filter(word => word.toLowerCase().startsWith('a'));
+    
+    // Return the new array
+    return wordsStartingWithA;
+}
+
+// Example usage:
+const wordArray: string[] = ["Apple", "Banana", "Apricot", "Pear", "Avocado", "Orange"]; // Example array of words
+const wordsStartingWithA: string[] = filterWordsStartingWithA(wordArray);
+console.log("Words starting with 'a':", wordsStartingWithA);
+
+
+12-Create a script that logs the second to last element of an array named fruits.
+// Define an array of fruits
+const fruits: string[] = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
+
+// Get the second to last element of the array
+const secondToLastElement: string = fruits[fruits.length - 2];
+console.log("The second to last element of the array is:", secondToLastElement);
+
+13-Develop a function that takes an array of numbers and returns a new array with each number squared.
+// Define a function called squareNumbers that takes an array of numbers as input and returns a new array with each number squared
+function squareNumbers(numbers: number[]): number[] {
+    // Use the map method to create a new array with each number squared
+    const squaredNumbers: number[] = numbers.map(number => number * number);
+    
+    // Return the new array
+    return squaredNumbers;
+}
+console.log("Squared numbers:", squaredNumbers);
+14-Write a JavaScript function that accepts an array and reverses its elements without using the .reverse() method. Log the result.
+// Define a function called reverseArray that accepts an array and reverses its elements without using the .reverse() method
+function reverseArray<T>(arr: T[]): T[] {
+    // Initialize an empty array to store the reversed elements
+    const reversedArray: T[] = [];
+    
+    // Loop through the original array in reverse order
+    for (let i = arr.length - 1; i >= 0; i--) {
+        // Add each element of the original array to the reversedArray
+        reversedArray.push(arr[i]);
+    }
+    
+    // Return the reversed array
+    return reversedArray;
+}
+
+console.log("Reversed array:", reversedArray);
+
+15-Given an array scores [10, 5, 20, 20, 4, 5, 2, 25, 1], write a function that logs the number of times the score exceeded the maximum score and the number of times it fell below the minimum score.
+// Define a function called countExceedingAndFallingScores that takes an array of scores, maximum score, and minimum score as input
+function countExceedingAndFallingScores(scores: number[], maxScore: number, minScore: number): void {
+    // Initialize variables to count exceeding and falling scores
+    let exceedingCount: number = 0;
+    let fallingCount: number = 0;
+ // Loop through the array of scores
+    scores.forEach(score => {
+        // Check if the current score exceeds the maximum score
+        if (score > maxScore) {
+            exceedingCount++;
+        }
+        // Check if the current score falls below the minimum score
+        if (score < minScore) {
+            fallingCount++;
+        }
+    });
+
+    console.log("Number of times the score exceeded the maximum score:", exceedingCount);
+    console.log("Number of times the score fell below the minimum score:", fallingCount);
+}
+
+// Call the function with the provided array of scores, maximum score, and minimum score
+countExceedingAndFallingScores(scores, maxScore, minScore);
+
+16-Create a function that removes all falsey values from an array. Falsey values include false, null, 0, "", undefined, and NaN.// Define a function called countExceedingAndFallingScores that takes an array of scores, maximum score, and minimum score as input
+function countExceedingAndFallingScores(scores: number[], maxScore: number, minScore: number): void {
+    // Initialize variables to count exceeding and falling scores
+    let exceedingCount: number = 0;
+    let fallingCount: number = 0;
+
+    // Loop through the array of scores
+    for (let i = 0; i < scores.length; i++) {
+        // Check if the current score exceeds the maximum score
+        if (scores[i] > maxScore) {
+            exceedingCount++;
+        }
+        // Check if the current score falls below the minimum score
+        else if (scores[i] < minScore) {
+            fallingCount++;
+        }
+    }
+    console.log("Number of times the score exceeded the maximum score:", exceedingCount);
+    console.log("Number of times the score fell below the minimum score:", fallingCount);
+}
+
+// Call the function with the provided array of scores, maximum score, and minimum score
+countExceedingAndFallingScores(scores, maxScore, minScore);
+
+17-Write a script that concatenates two arrays [1, 2, 3] and [4, 5, 6] into a single array.
+// Define two arrays
+const array1: number[] = [1, 2, 3];
+const array2: number[] = [4, 5, 6];
+
+// Concatenate the two arrays into a single array
+const concatenatedArray: number[] = [...array1, ...array2];
+console.log("Concatenated array:", concatenatedArray);
+
+18-Develop a function called sumOfElements that calculates the sum of all elements in an array that are either even or odd, based on a parameter.
+// Define a function called sumOfElements that calculates the sum of all elements in an array that are either even or odd, based on a parameter
+function sumOfElements(numbers: number[], isEven: boolean): number {
+    // Initialize a variable to store the sum
+    let sum: number = 0;
+
+    // Loop through the array of numbers
+    for (let i = 0; i < numbers.length; i++) {
+        // Check if the number is even or odd based on the isEven parameter
+        if ((isEven && numbers[i] % 2 === 0) || (!isEven && numbers[i] % 2 !== 0)) {
+            // If the number meets the condition, add it to the sum
+            sum += numbers[i];
+        }
+    }
+
+    // Return the sum
+    return sum;
+}
+console.log("Sum of even numbers:", sumOfEvenNumbers);
+console.log("Sum of odd numbers:", sumOfOddNumbers);
+
+
+19-Create a function that checks whether an element exists in an array. If it exists, return the index, otherwise return -1.
+// Define a function called findElementIndex that checks whether an element exists in an array and returns its index if found, otherwise returns -1
+function findElementIndex<T>(array: T[], element: T): number {
+    // Loop through the array
+    for (let i = 0; i < array.length; i++) {
+        // Check if the current element matches the target element
+        if (array[i] === element) {
+            // If found, return its index
+            return i;
+        }
+    }
+    // If the element is not found, return -1
+    return -1;
+}
+
+// Call the function to find the index of the element
+const index: number = findElementIndex(myArray, elementToFind);
+
+// Check if the element was found
+if (index !== -1) {
+    console.log("The element", elementToFind, "was found at index", index);
+} else {
+    console.log("The element", elementToFind, "was not found in the array");
+}
+
+20-Write a function to find and return the smallest number in an array of integers.
+// Define a function called findSmallestNumber that takes an array of integers as input and returns the smallest number
+function findSmallestNumber(numbers: number[]): number {
+    // Check if the array is empty
+    if (numbers.length === 0) {
+        throw new Error("The array is empty");
+    }
+
+    // Initialize the smallest number with the first element of the array
+    let smallestNumber: number = numbers[0];
+
+    // Loop through the array starting from the second element
+    for (let i = 1; i < numbers.length; i++) {
+        // Update the smallest number if the current element is smaller
+        if (numbers[i] < smallestNumber) {
+            smallestNumber = numbers[i];
+        }
+    }
+
+    // Return the smallest number
+    return smallestNumber;
+}
+
+console.log("The smallest number in the array is:", smallestNumber);
+
+21-Write a function calculateProduct that takes an array of numbers and returns the product of all elements.
+// Define a function called calculateProduct that takes an array of numbers as input and returns the product of all elements
+function calculateProduct(numbers: number[]): number {
+    // Check if the array is empty
+    if (numbers.length === 0) {
+        throw new Error("The array is empty");
+    }
+
+    // Initialize the product with the first element of the array
+    let product: number = numbers[0];
+
+    // Loop through the array starting from the second element
+    for (let i = 1; i < numbers.length; i++) {
+        // Multiply the current element with the product
+        product *= numbers[i];
+    }
+
+    // Return the product
+    return product;
+}
+console.log("The product of all elements in the array is:", product);
+
+22-Develop a function filterByLength that takes an array of strings and a number n. The function should return an array containing only the strings that are longer than n characters.
+// Define a function called filterByLength that takes an array of strings and a number n as input and returns an array containing only the strings that are longer than n characters
+function filterByLength(strings: string[], n: number): string[] {
+    // Use the filter method to create a new array containing only strings longer than n characters
+    return strings.filter(str => str.length > n);
+}
+// Call the function to filter the strings longer than n characters
+const filteredStrings: string[] = filterByLength(inputStrings, n);
+console.log("Strings longer than", n, "characters:", filteredStrings);
+
+23-Create a function findDuplicates that finds and logs all duplicates in an array.
+// Define a function called findDuplicates that finds and logs all duplicates in an array
+function findDuplicates<T>(array: T[]): void {
+    // Create an empty object to store occurrences of each element
+    const occurrences: { [key: string]: number } = {};
+
+    // Loop through the array and count occurrences of each element
+    array.forEach(element => {
+        occurrences[element.toString()] = (occurrences[element.toString()] || 0) + 1;
+    });
+
+    // Log the duplicates found
+    Object.keys(occurrences).forEach(key => {
+        if (occurrences[key] > 1) {
+            console.log("Duplicate:", key, "occurs", occurrences[key], "times");
+        }
+    });
+}
+
+// Call the function to find and log duplicates
+findDuplicates(array);
+
+
+24-Write a function incrementAll that takes an array of integers and increments each element by one.
+// Define a function called incrementAll that takes an array of integers as input and increments each element by one
+function incrementAll(numbers: number[]): number[] {
+    // Create a new array to store the incremented elements
+    const result: number[] = [];
+
+    // Loop through the array and increment each element by one
+    for (let i = 0; i < numbers.length; i++) {
+        result.push(numbers[i] + 1);
+    }
+
+    // Return the new array with incremented elements
+    return result;
+}
+console.log("Original array:", originalArray);
+console.log("New array with each element incremented by one:", newArray);
+
+25-Develop a function countOccurrences that counts how many times a specific element appears in an array.
+// Define a function called countOccurrences that counts how many times a specific element appears in an array
+function countOccurrences<T>(array: T[], element: T): number {
+    // Initialize a variable to store the count of occurrences
+    let count: number = 0;
+
+    // Loop through the array
+    for (let i = 0; i < array.length; i++) {
+        // Check if the current element is equal to the target element
+        if (array[i] === element) {
+            // If yes, increment the count
+            count++;
+        }
+    }
+
+    // Return the count of occurrences
+    return count;
+}
+
+// Call the function to count occurrences of the element in the array
+const occurrences: number = countOccurrences(array, elementToCount);
+console.log("The element", elementToCount, "appears", occurrences, "times in the array.");
+
+26-Create a function isSorted that checks if an array is sorted in ascending order.
+// Define a function called isSorted that checks if an array is sorted in ascending order
+function isSorted<T>(array: T[]): boolean {
+    // Iterate through the array from the second element
+    for (let i = 1; i < array.length; i++) {
+        // If any element is smaller than its previous element, the array is not sorted
+        if (array[i] < array[i - 1]) {
+            return false;
+        }
+    }
+    // If the loop completes without finding any unsorted elements, the array is sorted
+    return true;
+}
+
+console.log("Is the sorted array sorted?", isSorted(sortedArray)); // Expected output: true
+console.log("Is the unsorted array sorted?", isSorted(unsortedArray)); // Expected output: false
+
+27-Write a function that receives an array of names and formats them into a string separated by commas, except for the last two names, which should be separated by "and".
+// Define a function called formatNames that receives an array of names and formats them into a string
+function formatNames(names: string[]): string {
+    // If the array is empty, return an empty string
+    if (names.length === 0) {
+        return "";
+    }
+    // If there's only one name, return it directly
+    if (names.length === 1) {
+        return names[0];
+    }
+    // If there are two names, join them with "and" and return
+    if (names.length === 2) {
+        return names.join(" and ");
+    }
+    // If there are more than two names, join all but the last two with commas, then add "and" before the last name
+    const formattedNames = names.slice(0, -2).join(", ") + ", " + names.slice(-2).join(" and ");
+    return formattedNames;
+}
+
+console.log(formatNames(names1)); // Expected output: "Alice, Bob, Charlie and David"
+console.log(formatNames(names2)); // Expected output: "John"
+console.log(formatNames(names3)); // Expected output: "Mary and Joseph"
+
+28-Develop a function that converts an array of Fahrenheit temperatures to Celsius and logs the new temperatures.
+// Define a function called convertFahrenheitToCelsius that takes an array of Fahrenheit temperatures as input and logs the equivalent temperatures in Celsius
+function convertFahrenheitToCelsius(temperaturesFahrenheit: number[]): void {
+    // Convert each Fahrenheit temperature to Celsius and log the result
+    const temperaturesCelsius: number[] = temperaturesFahrenheit.map(tempF => (tempF - 32) * (5 / 9));
+    console.log("Fahrenheit temperatures:", temperaturesFahrenheit);
+    console.log("Celsius temperatures:", temperaturesCelsius);
+}
+
+29-Write a function minMaxAverage that takes an array of numbers and returns an object with properties for the minimum, maximum, and average of those numbers.
+// Define a function called minMaxAverage that takes an array of numbers as input and returns an object with properties for the minimum, maximum, and average of those numbers
+function minMaxAverage(numbers: number[]): { min: number, max: number, average: number } {
+    // Check if the array is empty
+    if (numbers.length === 0) {
+        throw new Error("The array is empty");
+    }
+
+    // Calculate the minimum and maximum values using Math.min and Math.max functions
+    const min: number = Math.min(...numbers);
+    const max: number = Math.max(...numbers);
+
+    // Calculate the average value
+    const sum: number = numbers.reduce((acc, num) => acc + num, 0);
+    const average: number = sum / numbers.length;
+
+    // Return an object with properties for min, max, and average
+    return { min, max, average };
+}
+// Call the function to get the minimum, maximum, and average of the numbers
+const result = minMaxAverage(numbers);
+console.log("Minimum:", result.min);
+console.log("Maximum:", result.max);
+console.log("Average:", result.average);
+30-Create a function swapElements that swaps two specified indices in an array.
+// Define a function called swapElements that swaps two specified indices in an array
+function swapElements<T>(array: T[], index1: number, index2: number): void {
+    // Check if the indices are within the bounds of the array
+    if (index1 < 0 || index1 >= array.length || index2 < 0 || index2 >= array.length) {
+        throw new Error("Indices are out of bounds");
+    }
+
+    // Swap the elements at the specified indices using destructuring assignment
+    [array[index1], array[index2]] = [array[index2], array[index1]];
+}
+console.log("Original array:", array);
+// Swap elements at indices 1 and 3
+swapElements(array, 1, 3);
+console.log("Array after swapping elements at indices 1 and 3:", array);
+
+31-Develop a function that takes two inputs, a string and a character, and returns the number of times the character appears in the string.
+// Define a function called countCharacterOccurrences that takes a string and a character as input and returns the number of times the character appears in the string
+function countCharacterOccurrences(inputString: string, character: string): number {
+    // Initialize a variable to store the count of occurrences
+    let count: number = 0;
+
+    // Loop through each character in the string
+    for (let i = 0; i < inputString.length; i++) {
+        // Check if the current character matches the specified character
+        if (inputString[i] === character) {
+            // If yes, increment the count
+            count++;
+        }
+    }
+
+    // Return the count of occurrences
+    return count;
+}
+
+
+// Call the function to count occurrences of the character in the string
+const occurrences: number = countCharacterOccurrences(inputString, character);
+console.log(`The character '${character}' appears ${occurrences} times in the string.`);
+
+32-Create a 'to-do list' array of objects where each object has properties task and completed (a boolean). Write a function to log only the tasks that are not yet completed.
+// Define a type for the to-do list item
+type TodoItem = {
+    task: string;
+    completed: boolean;
+};
+
+// Create a to-do list array of objects
+const todoList: TodoItem[] = [
+    { task: "Complete assignment", completed: true },
+    { task: "Go to the gym", completed: false },
+    { task: "Buy groceries", completed: false },
+    { task: "Read a book", completed: true },
+];
+
+// Define a function called logIncompleteTasks that logs only the tasks that are not yet completed
+function logIncompleteTasks(todoList: TodoItem[]): void {
+    console.log("Tasks that are not yet completed:");
+    todoList.forEach(todo => {
+        if (!todo.completed) {
+            console.log(todo.task);
+        }
+    });
+}
+
+// Call the function to log the incomplete tasks
+logIncompleteTasks(todoList);
+
+33-Write a function that takes an array of integers and sorts them from smallest to largest.
+// Define a function called sortNumbersAscending that takes an array of integers as input and sorts them from smallest to largest
+function sortNumbersAscending(numbers: number[]): number[] {
+    // Use the sort() method to sort the numbers array in ascending order
+    const sortedNumbers = numbers.slice().sort((a, b) => a - b);
+    return sortedNumbers;
+}
+console.log("Sorted numbers (ascending):", sortedNumbers);
+
+  34-Develop a TypeScript program that logs every element of an array in reverse order without using the .reverse() method.
+// Define a function called logArrayInReverse that logs every element of an array in reverse order
+function logArrayInReverse<T>(array: T[]): void {
+    // Iterate through the array in reverse order
+    for (let i = array.length - 1; i >= 0; i--) {
+        // Log each element
+        console.log(array[i]);
+    }
+}
+35Write a script that simulates a basic calculator. It should take two operands and an operator ('+', '-', '*', '/') from the user, perform the operation, and log the result.
+ // Define a function called calculate that takes two operands and an operator and performs the operation
+function calculate(operand1: number, operand2: number, operator: string): number {
+    switch (operator) {
+        case '+':
+            return operand1 + operand2;
+        case '-':
+            return operand1 - operand2;
+        case '*':
+            return operand1 * operand2;
+        case '/':
+            if (operand2 === 0) {
+                throw new Error("Division by zero is not allowed");
+            }
+            return operand1 / operand2;
+        default:
+            throw new Error("Invalid operator");
+    }
+}
+
+// Get inputs from the user
+const operand1: number = parseFloat(prompt("Enter the first operand:"));
+const operand2: number = parseFloat(prompt("Enter the second operand:"));
+const operator: string = prompt("Enter the operator (+, -, *, /):");
+
+// Perform the calculation
+try {
+    const result: number = calculate(operand1, operand2, operator);
+    console.log("Result:", result);
+} catch (error) {
+    console.log("Error:", error.message);
+}
